@@ -8,8 +8,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+// .form-inputs.input-group.date.datepicker{
+//     format: "dd/mm/yyyy";
+// }

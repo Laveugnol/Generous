@@ -1,0 +1,98 @@
+<div class="bg-color">
+  <div class="section-first">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 ">
+          <div class="banner-title">
+            <h1>THE MOST GENEROUS MAN</h1>
+            <p>Could you be the next one?
+            <span class="text-typed typed"></span></p>
+          </div>
+        </div>
+      <br>
+        <div class="col-xs-12 col-md-4 ">
+          <div class="clock">
+            <div class="hour"></div>
+            <div class="second"></div>
+            <div class="center"></div>
+          </div>
+
+          <button type="button" class="btn-cta-home animated pulse" data-toggle="modal" data-target=".bd-example-modal-sm">Prove your generosity</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+    <div class="explain-content">
+      <div class="title-content text-center">
+          <h2> The generosity podium</h2>
+      </div>
+      <div class="explain-content-block">
+        <div class =""><%= image_tag "wahou.svg" %> </div>
+        <div class="product">
+          <div class='product-upvote'>
+
+            <div class='product-count'>95€</div>
+          </div>
+          <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs">
+          <div class='product-body'>
+            <h3>Kudoz</h3>
+            <p>Les meilleures offres d'emploi cadre sur mobile</p>
+          </div>
+          <ul class="list-inline product-controls hidden-sm hidden-xs">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <div class="who-content">
+    <div class="container ">
+      <div class="title-content text-center">
+          <h2> Must seen metrics </h2>
+      </div>
+      <div class="who-content-block">
+        <div class="who-text-explain">
+
+        </div>
+     </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    payment stripe
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Typed form JS -->
+<%= content_for(:after_js) do %>
+
+  <script>
+  $(document).ready(function(){
+      $(".typed").typed({
+        strings: ["Vincent le généreux", "Le Dalaï-Lama", "L'abbé Pierre"],
+        startDelay: 2000,
+        typeSpeed: 60,
+        backSpeed: 90,
+        backDelay: 1000
+      });
+  });
+  </script>
+<% end %>
+

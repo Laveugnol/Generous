@@ -1,4 +1,200 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+.sign-in-link, .sign-out-link{
+  position:absolute;
+  top:15px;
+  right: 30px;
+}
+
+.sign-in-link a{
+  color: white;
+  font-size : 20px;
+  font-family: "Heebo", sans-serif;
+  font-weight: normal;
+  padding-bottom: 40px;
+
+}
+
+.sign-in-link a:hover{
+  text-decoration : none;
+  color: #F4D35E;
+}
+
+
+.sign-out-link a{
+  color: white;
+  font-size : 20px;
+  font-family: "Heebo", sans-serif;
+  font-weight: normal;
+  padding-bottom: 40px;
+
+}
+
+.sign-out-link a:hover{
+  text-decoration : none;
+  color: #F4D35E;
+}
+
+.bg-color {
+  display: block;
+  background-color: #2B414D;
+  height: 90vh;
+}
+
+.section-first{
+ padding-top: 70px;
+ padding-bottom: 50px;
+
+}
+
+.explain-content{
+  height: 400px;
+  background-color: white;
+}
+
+.explain-content-block, .who-content-block{
+  display: flex;
+  align-items: center;
+}
+
+.illu-explain{
+  height: 220px;
+  width: 50%
+}
+
+.text-explain{
+  font-size: 20px;
+  color: #2B414D;
+  padding : 40px 60px 0 20px;
+  font-weight: lighter;
+  line-height: 48px;
+}
+
+
+.who-text-explain{
+  font-size: 20px;
+  color: #2B414D;
+  padding : 40px 40px 0px 20px;
+  font-weight: lighter;
+  line-height: 48px;
+}
+
+.who-content{
+  height: 400px;
+  background-color: #F7F6F5;
+}
+
+.cta-banner{
+  background-color: white;
+  height: 250px;
+  padding: 100px;
+  h2{
+  padding-top: 20px;
+  color:white;
+  position: center;
+  }
+
+}
+
+.title-content h2{
+  padding: 40px 20px 0 20px;
+  color: #2B414D;
+  text-align: center;
+  font-weight: 900;
+}
+
+#team_home{
+ background: asset-url("team_home.svg") no-repeat center;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+/* Body design */
+.product-body {
+  flex: 1 1 auto;
+}
+.product-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.product-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+/* Product image */
+.product-image {
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 175px;
+}
+
+/* Upvote design */
+.product-upvote {
+  padding-right: 20px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.product-count {
+  margin: 2px 0 0;
+}
+.product-arrow {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.product-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.product-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+}
+.product-controls a:hover {
+  color: #D3473C !important
+}
+.product-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.product:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+.product-upvote:hover, .product-upvote.product-upvote-upvoted {
+  color: #5898f1;
+  cursor: pointer;
+}
+.product-upvote-upvoted .product-arrow {
+  border-bottom-color: #5898f1;
+}
+// .product:hover .product-upvote { transform: scale(1.2) }
+.product:hover .product-controls-hidden a { color: #E6E6E6 }
+.product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
+
+
