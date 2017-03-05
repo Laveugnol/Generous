@@ -11,69 +11,98 @@
         </div>
       <br>
         <div class="col-xs-12 col-md-4 ">
-          <div class="clock">
-            <div class="hour"></div>
-            <div class="second"></div>
-            <div class="center"></div>
-          </div>
+        <div class="banner-title">
+        <% if @winner != nil%>
+            <p>Record <%=@winner.amount*100%>€</p>
+            <div class="card"
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('<%= cl_image_path @winner.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="card-category"><%= @winner.player_sku %></div>
+            </div>
+          <%else%>
+
+          <p>Be the leader ! Show the generosity path</p>
+          <%end%>
+
+
+
 
           <button type="button" class="btn-cta-home animated pulse" data-toggle="modal" data-target=".bd-example-modal-sm">Prove your generosity</button>
+        </div>
         </div>
       </div>
     </div>
   </div>
-  <br>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+
     <div class="explain-content">
+    <div class="col-xs-12">
       <div class="title-content text-center">
-          <h2> The generosity podium</h2>
+          <h2 id="team_home"> The generosity race</h2>
       </div>
-      <div class="explain-content-block">
-        <div class =""><%= image_tag "wahou.svg" %> </div>
+    </div>
+
+<% if @classement.size >= 3%>
+      <div class="col-xs-12 col-md-4 col-lg-4">
         <div class="product">
           <div class='product-upvote'>
-
-            <div class='product-count'>95€</div>
+            <div class='product-count'>1st</div>
           </div>
-          <img src="kudoz.jpg" alt="kudoz" class="product-image hidden-xs">
+          <%=cl_image_tag @winner.photo, class: "product-image hidden-xs"%>
           <div class='product-body'>
-            <h3>Kudoz</h3>
-            <p>Les meilleures offres d'emploi cadre sur mobile</p>
+            <h3><%=@winner.player_sku%></h3>
+            <p><strong><%=@winner.amount_cents%>€</strong></p>
           </div>
-          <ul class="list-inline product-controls hidden-sm hidden-xs">
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
         </div>
-      </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="product">
+          <div class='product-upvote'>
+            <div class='product-count'>2nd</div>
+          </div>
+          <%=cl_image_tag @second.photo, class: "product-image hidden-xs"%>
+          <div class='product-body'>
+            <h3><%=@second.player_sku%></h3>
+            <p><strong><%=@second.amount_cents%>€</strong></p>
+          </div>
+        </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="product">
+          <div class='product-upvote'>
+            <div class='product-count'>3rd</div>
+          </div>
+          <%=cl_image_tag @third.photo, class: "product-image hidden-xs"%>
+          <div class='product-body'>
+            <h3><%=@third.player_sku%></h3>
+            <p><strong><%=@third.amount_cents%>€</strong></p>
+          </div>
+        </div>
+    </div>
     </div>
   </div>
 </div>
 </div>
+<%end%>
 
-  <div class="who-content">
-    <div class="container ">
-      <div class="title-content text-center">
-          <h2> Must seen metrics </h2>
-      </div>
-      <div class="who-content-block">
-        <div class="who-text-explain">
 
-        </div>
-     </div>
-  </div>
-</div>
 
 
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-    payment stripe
+    <div class="modal-content text-center">
+      <%= simple_form_for [@order] do |f| %>
+      <%= f.error_notification%>
+      <%= f.input :amount_cents, label: 'How much would you like to give?', autofocus: true, hint: true  %>
+      <%= f.input :player_sku,label: false, placeholder: 'Type your name or nickname', autofocus: true, hint: true  %>
+      <%= f.input :email, label: false, placeholder: 'Enter a valid email', autofocus: true, hint: true  %>
+      <%= f.input :photo, label: false, autofocus: true, hint: true  %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Give!", class: "btn-cta-home" %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -94,5 +123,6 @@
       });
   });
   </script>
+
 <% end %>
 

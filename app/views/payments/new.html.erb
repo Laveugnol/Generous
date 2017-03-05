@@ -1,0 +1,43 @@
+<div class="bg-color">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 ">
+          <div class="banner-title">
+            <h1><%=@order.player_sku%></h1>
+            <p>You plan to bet</p>
+
+            <%= form_tag order_payments_path(@order) do %>
+              <article>
+                <label class="amount">
+                  <p><%= @order.amount*100 %>€</p>
+                </label>
+              </article>
+
+
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-name="Generosity contest"
+                data-email="<%= @order.email %>"
+                data-description="<%= @order.player_sku %>"
+                data-amount="<%= @order.amount_cents*100 %>"
+                data-currency="<%= @order.amount.currency %>"></script>
+
+            <% end %>
+
+          </div>
+        </div>
+      <br>
+        <div class="col-xs-12 col-md-4 ">
+            <div class="avatar-large"><%=cl_image_tag @order.photo%>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
