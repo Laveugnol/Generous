@@ -13,7 +13,7 @@ to = @user.phone.to_s # Your mobile phone number
 @client.messages.create(
 from: from,
 to: to,
-body: "Hey #{@user.name}, ça fonctionne biloute ! ton numero de police est le #{@user.policy}"
+body: "Hey #{@user.name}, vous venez de nous appeler concernant votre police n:#{@user.policy}, Recommanderiez-vous notre entrprise à votre entourage? (échelle de 1 à 10)"
 )
 
      redirect_to root_path
