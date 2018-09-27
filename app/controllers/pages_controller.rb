@@ -8,5 +8,8 @@ class PagesController < ApplicationController
     @second = @classement[1]
     @third = @classement[2]
 
+
+    @user = User.new
+
   end
 end

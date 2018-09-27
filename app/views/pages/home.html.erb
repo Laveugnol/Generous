@@ -4,38 +4,68 @@
       <div class="row">
         <div class="col-xs-12 col-md-8 ">
           <div class="banner-title">
-            <h1>THE MOST GENEROUS MAN</h1>
-            <p>Could you be the next one?
+            <h1>Platform test LOA</h1>
+            <p>What do you wanna do?
             <span class="text-typed typed"></span></p>
           </div>
         </div>
       <br>
         <div class="col-xs-12 col-md-4 ">
         <div class="banner-title">
-        <% if @winner != nil%>
+       <!--  <% if @winner != nil%>
             <p>Record <%=@winner.amount*100%>€</p>
             <div class="card"
               style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
               url('<%= cl_image_path @winner.photo, height: 300, width: 400, crop: :fill %>')">
               <div class="card-category"><%= @winner.player_sku %></div>
             </div>
-          <%else%>
-
-          <p>Be the leader ! Show the generosity path</p>
-          <%end%>
-
-
-
-
+            <%else%>
+            <p>Be the leader ! Show the generosity path</p>
+            <%end%>
           <button type="button" class="btn-cta-home animated pulse" data-toggle="modal" data-target=".bd-example-modal-sm">Prove your generosity</button>
-        </div>
+        </div> -->
+
+
+        <img src="https://taleez.com/pics/logos/150x150/YzUxOTU2MTEtYzAyMC00ZDZjLWIwMDYtMjZhZDc5YzIyMDFk_2x.png" alt="">
         </div>
       </div>
     </div>
   </div>
+  </div>
+  <br>
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 ">
+          <!--  <img src="http://igsoft.cluster006.ovh.net/WikiFrCarPack/images/4/47/Twilio-logo-2100x650.png" alt="" class="img-responsive"> -->
+          <div class="banner-title2">
+            <h1>SMS survey</h1>
+       <!--      <p>sms survey</p> -->
+       <h2><%= link_to "see NPS results", users_twilio_response_path %></h2>
+          </div>
+
+        </div>
+      <br>
+        <div class="col-xs-12 col-md-4 ">
+        <div class="banner-title">
+
+
+        <%= simple_form_for @user do |f| %>
+        <%= f.input :name, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
+        <%= f.input :phone, placeholder: '0612131415' %>
+        <%= f.input :policy, placeholder: '123456' %>
+        <%= f.button :submit, 'send text'  %>
+      <% end %>
+
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
 
     <div class="explain-content">
@@ -87,11 +117,11 @@
 </div>
 </div>
 <%end%>
+ -->
 
 
 
-
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<!-- <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content text-center">
       <%= simple_form_for [@order] do |f| %>
@@ -105,7 +135,7 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
@@ -115,7 +145,7 @@
   <script>
   $(document).ready(function(){
       $(".typed").typed({
-        strings: ["Vincent le généreux", "Le Dalaï-Lama", "L'abbé Pierre"],
+        strings: ["POC ?", "MVP ?", "Kick competitors' ass ?"],
         startDelay: 2000,
         typeSpeed: 60,
         backSpeed: 90,

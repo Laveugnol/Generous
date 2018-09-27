@@ -19,6 +19,7 @@ gem 'money-rails', '~> 1.8'
 gem 'stripe'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+gem 'twilio-ruby'
 
 
 group :development, :test do
