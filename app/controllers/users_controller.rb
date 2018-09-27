@@ -25,6 +25,23 @@ body: "Hey #{@user.name}, ça fonctionne biloute ! ton numero de police est le #
       @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
 
       @messages = @client.messages.list
+      @counter_overall = 0
+      @counter =0
+      @nps = 0
+
+      @messages.each do |record|
+        if record.direction == "inbound"
+          if (1..10).include?(record.body.to_i)
+            @nps += record.body.to_i
+            @counter+=1
+          end
+
+
+        end
+      end
+      counter =@counter
+
+      @average = @nps/counter
 
       # messages.each do |record|
       #   puts record.sid

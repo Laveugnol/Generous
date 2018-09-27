@@ -1,6 +1,32 @@
-yo
+<div class="bg-color">
+  <div class="section-first">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 ">
+          <div class="banner-title">
+            <h1>Scores collected</h1>
+              <div class="row">
+                <div class="col-xs-6">
+                  <h4>average score</h4>
+                  <p><%= @average%></p>
+                </div>
+                <div class="col-xs-6">
+                  <h4>number of numeric response</h4>
+                  <p> <%= @counter%></p>
+                </div>
+              </div>
+          </div>
+        </div>
+      <br>
+        <div class="col-xs-12 col-md-4 ">
+          <div class="banner-title">
 
+            <a href='<%=root_path%>'/>
+            <img src="https://taleez.com/pics/logos/150x150/YzUxOTU2MTEtYzAyMC00ZDZjLWIwMDYtMjZhZDc5YzIyMDFk_2x.png" alt="">
+          </a>
 
-  <% @messages.each do |record|%>
-      <%= record.sid%>
-      <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
