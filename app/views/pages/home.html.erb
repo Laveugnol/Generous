@@ -60,6 +60,21 @@
 
         </div>
       </div>
+         <div class="col-xs-12 col-md-4 ">
+        <div class="banner-title">
+
+
+        <%= simple_form_for @user, :url => users_twilio_call_path, :method => :post do |f| %>
+        <%= f.input :name, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
+        <%= f.input :phone, placeholder: '0612131415' %>
+        <%= f.input :policy, placeholder: '123456' %>
+        <%= f.button :submit, 'Call me'  %>
+      <% end %>
+
+
+
+        </div>
+      </div>
     </div>
     </div>
   </div>

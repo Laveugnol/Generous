@@ -44,8 +44,31 @@ class UsersController < ApplicationController
       # messages.each do |record|
       #   puts record.sid
       #   raise
+  end
 
 
+  def twilio_call
+
+     @user = User.new(user_params)
+
+    # Get your Account Sid and Auth Token from twilio.com/console
+    account_sid = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    auth_token = 'your_auth_token'
+
+
+     from = '+33644604514' # Your Twilio number
+    to = @user.phone.to_s # Your mobile phone number
+
+    # set up a client to talk to the Twilio REST API
+     @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
+
+    call = @client.calls.create(
+        to: '+33'+to,
+        from: from,
+        url: "http://demo.twilio.com/docs/voice.xml")
+    call.to
+
+       redirect_to root_path
 
   end
 
