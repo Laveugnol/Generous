@@ -20,7 +20,7 @@ gem 'stripe'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem 'twilio-ruby'
-
+gem 'rest-client', '~> 1.8'
 
 
 group :development, :test do

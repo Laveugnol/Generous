@@ -3,6 +3,17 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
 
+    RestClient::Request.execute(
+      method: :post,
+      url: 'https://api.provesrc.com/webhooks/track/f728705de97e1c139bda79af7c5684b6'
+      )
+
+
+
+
+     # RestClient.get "https://api.provesrc.com/webhooks/track/f728705de97e1c139bda79af7c5684b6"
+     # JSON.parse(response)
+
     @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
 
       from = '+33644604514' # Your Twilio number
@@ -13,6 +24,11 @@ class UsersController < ApplicationController
       to: to,
       body: "Hey #{@user.name}, vous venez de nous appeler concernant votre police n:#{@user.policy}, Recommanderiez-vous notre entrprise à votre entourage? (échelle de 1 à 10)"
       )
+
+
+
+
+
 
      redirect_to root_path
 
